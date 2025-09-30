@@ -3,9 +3,11 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <termios.h>
+int fd;
 int main()
 {
-    if(!open("/dev/serial0",O_RDWR))
+fd=open("/dev/ttyS0",O_RDWR);
+   if(fd<0)
     {
         printf("file isn't open");
         return 0;
