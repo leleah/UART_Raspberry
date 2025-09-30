@@ -17,6 +17,8 @@ fd=open("/dev/ttyS0",O_RDWR);
             printf("file open succesfully");
             return 1;
         }
-
+const char tx_data[]="12,1000,255";
+write(fd,tx_data,srtlen(tx_data));
+close(fd);
     return 0;
 }
